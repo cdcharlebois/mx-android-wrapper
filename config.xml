@@ -111,10 +111,8 @@
 	<!-- Icon definitions - for more details: http://developer.android.com/guide/topics/resources/providing-resources.html -->
 	<gap:splash src="res/android/port-hdpi.png" gap:platform="android" gap:qualifier="port-hdpi"/>
 
-
-  <!-- enable android debugging !important -->
-  <gap:config-file platform="android" parent="/manifest">
+  <!-- <gap:config-file platform="android" parent="/manifest">
     <application android:debuggable="true" />
-  </gap:config-file>
+  </gap:config-file> -->
 
 </widget>
