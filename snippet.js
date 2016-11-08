@@ -30,6 +30,7 @@
       mx.data.create({
         entity: "DLAM.OfflineAHC",
         callback: function(obj){
+          console.log('created OfflineAHC with guid: ' + obj.getGuid())
           obj.set("DLAM.OfflineAHC_CageCard", cardGuid) // set association
           newContext.setContext(obj)
           // then, navigate to the new page, with the new OfflineAHC as context
