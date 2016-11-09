@@ -33,6 +33,8 @@
           console.log('created OfflineAHC with guid: ' + obj.getGuid())
           obj.set("DLAM.OfflineAHC_CageCard", cardGuid) // set association
           newContext.setContext(obj)
+
+          console.log(window._mxOfflineAHC)
           // then, navigate to the new page, with the new OfflineAHC as context
           mx.ui.openForm(offlinePage, {
               location: "content",
