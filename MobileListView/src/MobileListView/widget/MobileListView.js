@@ -42,14 +42,17 @@ define([
 
 
         widgetBase: null,
+        attributeName: "",
+        collectionName: "",
+        referenceName: "",
 
         // Internal variables.
         _handles: null,
         _contextObj: null,
 
-        // constructor: function () {
-        //     this._handles = [];
-        // },
+        constructor: function () {
+            this._handles = [];
+        },
         //
         // postCreate: function () {
         //     logger.debug(this.id + ".postCreate");
@@ -58,14 +61,14 @@ define([
         update: function (obj, callback) {
           var wid = this;
             // logger.debug(this.id + ".update");
-            var thisOfflineAHC = obj.getGuid().split("GUID:")[1]
+            var guid = obj.getGuid().split("GUID:")[1]
             mx.data.getSlice(
-              "DLAM.CaseCondition",
+              wid.collectionName,
               [
                 {
-                  attribute: "DLAM.CaseCondition_OfflineAHC",
+                  attribute: wid.referenceName,
                   operator: "equals",
-                  value: thisOfflineAHC
+                  value: guid
                 }
               ],
               {
@@ -82,9 +85,16 @@ define([
                 var wrapper = wid.widgetBase
 
                 res.forEach(function(r){
-                  var tempDiv = document.createElement("div")
-                  tempDiv.innerHTML = r.jsonData.attributes.ConditionName.value
-                  wrapper.appendChild(tempDiv)
+                  var tempDivPanelInner = document.createElement("div")
+                  ,   tempDivPanelOuter = document.createElement("div");
+
+                  tempDivPanelInner.className = "panel-body"
+                  tempDivPanelInner.innerHTML = r.jsonData.attributes[wid.attributeName].value
+                  tempDivPanelOuter.className = "panel panel-default"
+
+                  tempDivPanelOuter.appendChild(tempDivPanelInner)
+
+                  wrapper.appendChild(tempDivPanelOuter)
                   // console.log(r) // this would be writing to the dom
                 })
               },

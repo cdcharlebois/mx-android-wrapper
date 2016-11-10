@@ -9,7 +9,19 @@ var thisOfflineAHC = this.mxform._context.trackId.split("GUID:")[1]
   mx.data.create({
     entity: "DLAM.CaseCondition",
     callback: function(obj){
+      console.log('created CaseCondition with guid: ' + obj.getGuid())
       obj.set("DLAM.CaseCondition_OfflineAHC", thisOfflineAHC) // set association
+      // mx.data.commit({
+      //    mxobj: obj,
+      //    callback:function(){
+      //      //do something
+      //      console.log('committed obj: ' + obj.getGuid())
+      //    },
+      //    error: function(err){
+      //      console.log(err)
+      //    }
+      // });
+      console.log(obj)
       newContext.setContext(obj);
       mx.ui.openForm(page, {
           location: "content",

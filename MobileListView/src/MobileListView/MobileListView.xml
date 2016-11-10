@@ -4,12 +4,24 @@
     <description>The description of this widget.</description>
 
     <icon />
-
+    <!-- attributeName: "",
+    baseObjectName: "",
+    referenceName: "", -->
     <properties>
-        <property key="dummyKey" type="string" required="false" defaultValue="">
-            <caption>Dummy key</caption>
-            <category>Appearance</category>
-            <description>This key was added to make the widget work in the Modeler (needs atleast 1 key). Please change/remove this one</description>
+        <property key="attributeName" type="string" required="true" defaultValue="">
+            <caption>Attribute Name</caption>
+            <category>Behavior</category>
+            <description>Name of the attibute (collection) to appear in the list of the collection</description>
+        </property>
+        <property key="collectionName" type="string" required="true" defaultValue="">
+            <caption>Collection Object Name</caption>
+            <category>Behavior</category>
+            <description>Name of Collection Object i.e. FROM</description>
+        </property>
+        <property key="referenceName" type="string" required="true" defaultValue="">
+            <caption>reference name</caption>
+            <category>Behavior</category>
+            <description>Name of the reference over which to fetch the collection</description>
         </property>
     </properties>
 </widget>
