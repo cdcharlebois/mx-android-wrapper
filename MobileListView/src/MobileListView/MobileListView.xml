@@ -13,6 +13,11 @@
             <category>Behavior</category>
             <description>Name of the attibute (collection) to appear in the list of the collection</description>
         </property>
+        <property key="onclickFunc" type="string" multiline="true" required="true" defaultValue="">
+            <caption>onclick</caption>
+            <category>Behavior</category>
+            <description>javascript to when the list item is clicked</description>
+        </property>
         <property key="collectionName" type="string" required="true" defaultValue="">
             <caption>Collection Object Name</caption>
             <category>Behavior</category>

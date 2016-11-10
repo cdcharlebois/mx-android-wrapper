@@ -1,4 +1,3 @@
-debugger;
 var thisCaseCondition = this.mxform._context.trackId.split("GUID:")[1]
 ,   newContext        = new mendix.lib.MxContext()
 ,   pageName          = "DLAM/Offline_ObjectiveObservations_NewEdit"

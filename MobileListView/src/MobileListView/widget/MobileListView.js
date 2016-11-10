@@ -45,6 +45,7 @@ define([
         attributeName: "",
         collectionName: "",
         referenceName: "",
+        onclickFunc: "",
 
         // Internal variables.
         _handles: null,
@@ -89,8 +90,13 @@ define([
                   ,   tempDivPanelOuter = document.createElement("div");
 
                   tempDivPanelInner.className = "panel-body"
-                  tempDivPanelInner.innerHTML = r.jsonData.attributes[wid.attributeName].value
+                  tempDivPanelInner.innerHTML = r.get(wid.attributeName)
+                  // tempDivPanelInner.innerHTML = r.jsonData.attributes[wid.attributeName].value
                   tempDivPanelOuter.className = "panel panel-default"
+                  tempDivPanelOuter.dataset.mxGuid = r.jsonData.guid
+                  tempDivPanelOuter.onclick = function(){
+                    eval(wid.onclickFunc + "\r\n//# sourceURL=" + wid.id + ".js");
+                  };
 
                   tempDivPanelOuter.appendChild(tempDivPanelInner)
 
@@ -106,27 +112,7 @@ define([
 
             this._contextObj = obj;
             callback();
-        },
-
-        // resize: function (box) {
-        //   logger.debug(this.id + ".resize");
-        // },
-        //
-        // uninitialize: function () {
-        //   logger.debug(this.id + ".uninitialize");
-        // },
-        //
-        // _updateRendering: function (callback) {
-        //     logger.debug(this.id + "._updateRendering");
-        //
-        //     if (this._contextObj !== null) {
-        //         dojoStyle.set(this.domNode, "display", "block");
-        //     } else {
-        //         dojoStyle.set(this.domNode, "display", "none");
-        //     }
-        //
-        //     mendix.lang.nullExec(callback);
-        // }
+        }
     });
 });
 

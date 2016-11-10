@@ -80,6 +80,8 @@
 	<gap:plugin name="phonegap-plugin-barcodescanner" source="npm" version="6.0.2" />
 	<gap:plugin name="phonegap-plugin-push" source="npm" version="1.5.3" />
 
+  <gap:plugin name="com.telerik.plugins.nativepagetransitions" source="npm" />
+  <gap:plugin name="cordova-plugin-spinnerdialog" source="npm" />
 
 
 	<gap:platform name="android" />
