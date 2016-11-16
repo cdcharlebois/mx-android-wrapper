@@ -48,7 +48,9 @@
         }
       })
     }
-    else {}
+    else {
+      mx.ui.error("We couldn't find a Cage Card with that id.", true)
+    }
   },
   function(err){
     console.log(err)
