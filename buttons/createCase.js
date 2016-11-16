@@ -50,6 +50,7 @@
     }
     else {
       mx.ui.error("We couldn't find a Cage Card with that id.", true)
+      document.querySelector(sel).value = ""
     }
   },
   function(err){
