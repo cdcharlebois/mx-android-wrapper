@@ -81,7 +81,7 @@
               if (xhr.readyState === DONE) {
                 if (xhr.status == OK) {
                   // online
-                  console.log(xhr.responseText); // 'This is the returned text.'
+                  console.log('Success: ' + xhr.status);
                   enableOffline = false;
                   // Make sure to include the scheme (e.g. http://) in the URL.
                   document.addEventListener("deviceready", function() {
